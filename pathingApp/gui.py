@@ -218,7 +218,7 @@ class GUI(tk.Tk):
         self.showPath()
 
     def saveGrid(self):
-        file = open("grids/grids.txt", "w")
+        file = open("pathingApp/grids/grids.txt", "w")
         lines = [
             str(self.startColumn) + " " + str(self.startRow) + "\n",
             str(self.finishColumn) + " " + str(self.finishRow) + "\n",
@@ -243,7 +243,7 @@ class GUI(tk.Tk):
             self.previewPoints[index].configure(bg=self.BLOCK_COLOR)
 
     def loadPreviewGrid(self, id):
-        file = open("grids/grids.txt", "r")
+        file = open("pathingApp/grids/grids.txt", "r")
         start = file.readline().split()
         finish = file.readline().split()
         blocks = file.readline().split("), (")
@@ -301,7 +301,7 @@ class GUI(tk.Tk):
     def parseName(self, name):
         indexOfR = name.find("r")
         c = int(name[1:indexOfR])
-        r = int(name[indexOfR+1:])
+        r = int(name[indexOfR + 1 :])
         return c, r
 
     def inMotionEvent(self, event, startColumn, startRow):

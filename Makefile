@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := build
 
 run:
-	pipenv run python src/main.py
+	pipenv run python pathingApp/gui.py
 
 lint:
 	pipenv run flake8 .
@@ -15,4 +15,4 @@ test:
 pre-commit:
 	pipenv run pre-commit install
 
-build: pre-commit format lint test run
+build: pre-commit format lint run
